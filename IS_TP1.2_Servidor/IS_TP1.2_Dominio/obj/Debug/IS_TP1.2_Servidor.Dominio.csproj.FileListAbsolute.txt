@@ -1,6 +1,0 @@
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Dominio\bin\Debug\IS_TP1.2_Dominio.dll
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Dominio\bin\Debug\IS_TP1.2_Dominio.pdb
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Dominio\obj\Debug\IS_TP1.2_Servidor.Dominio.csprojAssemblyReference.cache
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Dominio\obj\Debug\IS_TP1.2_Servidor.Dominio.csproj.CoreCompileInputs.cache
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Dominio\obj\Debug\IS_TP1.2_Dominio.dll
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Dominio\obj\Debug\IS_TP1.2_Dominio.pdb

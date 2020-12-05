@@ -111,8 +111,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aplicacion\IS_TP1.2_Servidor.Aplicacion.csproj">
-      <Project>{bffdedca-1222-42a1-a5a0-3c8fe8325a3a}</Project>
+    <ProjectReference Include="..\IS_TP1.2_Servidor.Aplicacion\IS_TP1.2_Servidor.Aplicacion.csproj">
+      <Project>{119cb1bf-655f-4392-b192-5a935f4a57fc}</Project>
       <Name>IS_TP1.2_Servidor.Aplicacion</Name>
     </ProjectReference>
   </ItemGroup>

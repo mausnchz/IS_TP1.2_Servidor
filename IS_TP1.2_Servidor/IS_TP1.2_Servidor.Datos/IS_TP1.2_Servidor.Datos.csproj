@@ -80,12 +80,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IS_TP1.2_Dominio\IS_TP1.2_Servidor.Dominio.csproj">
-      <Project>{1D13AA77-82F5-4D58-BC94-A639950FBDFC}</Project>
-      <Name>IS_TP1.2_Servidor.Dominio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\202012051931445_MigracionPrueba.resx">
       <DependentUpon>202012051931445_MigracionPrueba.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +95,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IS_TP1.2_Servidor.Dominio\IS_TP1.2_Servidor.Dominio.csproj">
+      <Project>{812a4f93-804e-4aa6-b732-9e9615c098d0}</Project>
+      <Name>IS_TP1.2_Servidor.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
