@@ -16,5 +16,68 @@ namespace IS_TP1._2_Servidor.Dominio
         public Empleado SupervisorCalidadIncorporado{ get; set; }
         public List<Turno> Turnos { get; set; }
 
+        public Boolean VerificarIncorporacionSupervisorCalidad()
+        {
+            if(SupervisorCalidadIncorporado != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public Boolean VerificarEstadoEnCurso()
+        {
+            if(Estado == EstadoOrdenProduccion.EN_CURSO)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void IncorporarSupervisorCalidad(Empleado supervisorCalidad)
+        {
+            SupervisorCalidadIncorporado = supervisorCalidad;
+        }
+
+        public Boolean VerificarExistenciaTurno(DateTime horaActual, TipoTurno tipoTurno)
+        {
+            foreach(Turno t in Turnos)
+            {
+                if(t.Fecha == horaActual.Date && t.Tipo == tipoTurno)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void CrearTurno(DateTime horaActual, TipoTurno tipoTurno, Empleado supervisorCalidad)
+        {
+            Turno turno = new Turno(horaActual, tipoTurno, supervisorCalidad);
+            Turnos.Add(turno);
+        }
+
+        public Boolean VerificarExistenciaBloqueTrabajo(DateTime horaActual)
+        {
+            Turno ultimoTurno = Turnos.Last();
+            BloqueTrabajo ultimoBloqueTrabajo = ultimoTurno.BloquesTrabajo.Last();
+
+            if(ultimoBloqueTrabajo.Hora == horaActual.Hour)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void CrearBloqueTrabajo(DateTime horaActual, Empleado supervisorCalidad)
+        {
+
+        }
     }
 }

@@ -41,7 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BloqueTrabajo.cs" />
+    <Compile Include="Cargo.cs" />
+    <Compile Include="Color.cs" />
+    <Compile Include="Defecto.cs" />
+    <Compile Include="DefectoRegistrado.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="EstadoOrdenProduccion.cs" />
+    <Compile Include="Modelo.cs" />
+    <Compile Include="OrdenProduccion.cs" />
+    <Compile Include="Orientacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoDefecto.cs" />
+    <Compile Include="TipoTurno.cs" />
+    <Compile Include="Turno.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

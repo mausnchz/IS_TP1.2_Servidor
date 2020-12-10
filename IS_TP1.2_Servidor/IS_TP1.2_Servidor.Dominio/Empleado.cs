@@ -13,6 +13,5 @@ namespace IS_TP1._2_Servidor.Dominio
         public string DNI { get; set; }
         public string Correo { get; set; }
         public Cargo Cargo { get; set; }
-        public Usuario Usuario { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace IS_TP1._2_Servidor.Dominio
     {
         public Defecto Defecto { get; set; }
         public Orientacion Orientacion { get; set; }
+
     }
 }

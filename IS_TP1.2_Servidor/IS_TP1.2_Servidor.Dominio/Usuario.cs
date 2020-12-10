@@ -10,6 +10,7 @@ namespace IS_TP1._2_Servidor.Dominio
     {
         public string Nombre { get; set; }
         public string Contraseña { get; set; }
+        public Empleado Empleado { get; set; }
 
     }
 }

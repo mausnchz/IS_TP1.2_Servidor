@@ -40,5 +40,10 @@ namespace IS_TP1._2_Servidor.Datos
         {
             contexto.Dispose();
         }
+
+        public void GuardarCambios()
+        {
+            contexto.SaveChanges();
+        }
     }
 }
