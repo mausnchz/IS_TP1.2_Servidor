@@ -14,6 +14,7 @@ namespace IS_TP1._2_Servidor.Dominio
         public string Correo { get; set; }
         public Cargo Cargo { get; set; }
 
+        public Empleado() { }
         public Empleado(string apellido, string nombre, string dni, string correo, Cargo cargo)
         {
             this.Apellido = apellido;

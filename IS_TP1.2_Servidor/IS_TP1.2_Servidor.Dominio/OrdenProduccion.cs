@@ -16,6 +16,8 @@ namespace IS_TP1._2_Servidor.Dominio
         public Empleado SupervisorCalidadIncorporado{ get; set; }
         public List<Turno> Turnos { get; set; }
 
+        public OrdenProduccion() { }
+
         public OrdenProduccion(string numero, Modelo modelo, Color color, EstadoOrdenProduccion estadoOrdenProduccion,
             Empleado supervisorLinea, List<Turno> turnos)
         {
@@ -56,7 +58,7 @@ namespace IS_TP1._2_Servidor.Dominio
         {
             foreach(Turno t in Turnos)
             {
-                if(t.Fecha == horaActual.Date && t.Tipo == tipoTurno)
+                if(t.Fecha.Date == horaActual.Date && t.Tipo == tipoTurno)
                 {
                     return true;
                 }

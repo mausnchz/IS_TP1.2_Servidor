@@ -35,7 +35,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
                 Boolean existeEstadoEnCurso = ordenProduccion.VerificarEstadoEnCurso();
                 Boolean existeSupervisorCalidadIncorporado = ordenProduccion.VerificarIncorporacionSupervisorCalidad();
 
-                if (!existeSupervisorCalidadIncorporado)
+                if (!existeSupervisorCalidadIncorporado && existeEstadoEnCurso)
                 {
                     Empleado supervisorCalidad = usuario.Empleado;
                     ordenProduccion.IncorporarSupervisorCalidad(supervisorCalidad);

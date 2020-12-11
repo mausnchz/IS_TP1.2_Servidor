@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IS_TP1.2_Servidor.Aplicacio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IS_TP1.2_Servidor.Datos", "IS_TP1.2_Servidor.Datos\IS_TP1.2_Servidor.Datos.csproj", "{4F7C66B7-5878-4F1E-A90B-90A0C5F0A604}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IS_TP1.2_Servidor.Pruebas", "IS_TP1.2_Servidor.Pruebas\IS_TP1.2_Servidor.Pruebas.csproj", "{A6770D2D-D6C6-4018-8DA1-E2CE3A4014F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4F7C66B7-5878-4F1E-A90B-90A0C5F0A604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F7C66B7-5878-4F1E-A90B-90A0C5F0A604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F7C66B7-5878-4F1E-A90B-90A0C5F0A604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6770D2D-D6C6-4018-8DA1-E2CE3A4014F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6770D2D-D6C6-4018-8DA1-E2CE3A4014F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6770D2D-D6C6-4018-8DA1-E2CE3A4014F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6770D2D-D6C6-4018-8DA1-E2CE3A4014F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

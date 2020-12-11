@@ -78,4 +78,3 @@ C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Se
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Aplicacion.pdb
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Dominio.pdb
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Datos.pdb
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Datos.dll.config
