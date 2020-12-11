@@ -11,5 +11,11 @@ namespace IS_TP1._2_Servidor.Dominio
         public Defecto Defecto { get; set; }
         public Orientacion Orientacion { get; set; }
 
+        public DefectoRegistrado(Defecto defecto, Orientacion orientacion)
+        {
+            this.Defecto = defecto;
+            this.Orientacion = orientacion;
+        }
+
     }
 }

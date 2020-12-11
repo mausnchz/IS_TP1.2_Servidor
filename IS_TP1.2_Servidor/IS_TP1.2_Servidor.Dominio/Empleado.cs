@@ -13,5 +13,14 @@ namespace IS_TP1._2_Servidor.Dominio
         public string DNI { get; set; }
         public string Correo { get; set; }
         public Cargo Cargo { get; set; }
+
+        public Empleado(string apellido, string nombre, string dni, string correo, Cargo cargo)
+        {
+            this.Apellido = apellido;
+            this.Nombre = nombre;
+            this.DNI = dni;
+            this.Correo = correo;
+            this.Cargo = cargo;
+        }
     }
 }

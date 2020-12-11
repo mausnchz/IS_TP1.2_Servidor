@@ -1,49 +1,39 @@
-﻿using System;
+﻿using IS_TP1._2_Servidor.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace IS_TP1._2_Servidor.Datos
 {
-    public class Repositorio<TEntity> : IDisposable
-        where TEntity : class
+    public sealed class Repositorio
     {
-        private readonly Contexto contexto;
+        private static readonly Repositorio instancia = new Repositorio();
+        private BaseDatos baseDatos = BaseDatos.ObtenerInstancia();
 
-        public Repositorio()
+        private Repositorio()
         {
-            if(contexto == null)
-            {
-                contexto = new Contexto();
-            }
         }
 
-        public IEnumerable<TEntity> ObtenerTodos()
+        public static Repositorio ObtenerInstancia()
         {
-            return contexto.Set<TEntity>();
+            return instancia;
         }
 
-        public IEnumerable<TEntity> ObtenerPorFiltro(Expression<Func<TEntity, bool>> filtro)
+        public OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion)
         {
-            return contexto.Set<TEntity>().Where(filtro);
+            return baseDatos.ObtenerOrdenesProduccion().Where(z => z.Numero == numeroOrdenProduccion).FirstOrDefault();
         }
 
-        public void Agregar(TEntity entidad)
+        public List<TipoTurno> ObtenerTiposTurno()
         {
-            contexto.Set<TEntity>().Add(entidad);
-            contexto.SaveChanges();
+            return baseDatos.ObtenerTiposTurno();
         }
 
-        public void Dispose()
+        public Usuario ObtenerUsuario(string nombreUsuario)
         {
-            contexto.Dispose();
-        }
-
-        public void GuardarCambios()
-        {
-            contexto.SaveChanges();
+            return baseDatos.ObtenerUsuarios().Where(z => z.Nombre == nombreUsuario).FirstOrDefault();
         }
     }
 }

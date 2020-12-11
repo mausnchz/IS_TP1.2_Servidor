@@ -10,5 +10,11 @@ namespace IS_TP1._2_Servidor.Dominio
     {
         public string Descripcion { get; set; }
         public TipoDefecto Tipo { get; set; }
+
+        public Defecto(string descripcion, TipoDefecto tipoDefecto)
+        {
+            this.Descripcion = descripcion;
+            this.Tipo = tipoDefecto;
+        }
     }
 }

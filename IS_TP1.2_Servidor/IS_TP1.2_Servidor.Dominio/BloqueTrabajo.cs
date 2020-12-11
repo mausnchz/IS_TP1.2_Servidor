@@ -13,6 +13,15 @@ namespace IS_TP1._2_Servidor.Dominio
         public Empleado SupervisorCalidad { get; set; }
         public List<DefectoRegistrado> DefectosRegistrados { get; set; }
 
+        public BloqueTrabajo(int hora, int cantidadParesPrimeraCalidad, Empleado supervisorCalidad,
+            List<DefectoRegistrado> defectosRegistrados)
+        {
+            this.Hora = hora;
+            this.CantidadParesPrimeraCalidad = cantidadParesPrimeraCalidad;
+            this.SupervisorCalidad = supervisorCalidad;
+            this.DefectosRegistrados = defectosRegistrados;
+        }
+
         public BloqueTrabajo(DateTime horaActual, Empleado supervisorCalidad)
         {
             Hora = horaActual.Hour;

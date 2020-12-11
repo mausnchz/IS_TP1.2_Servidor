@@ -16,6 +16,17 @@ namespace IS_TP1._2_Servidor.Dominio
         public Empleado SupervisorCalidadIncorporado{ get; set; }
         public List<Turno> Turnos { get; set; }
 
+        public OrdenProduccion(string numero, Modelo modelo, Color color, EstadoOrdenProduccion estadoOrdenProduccion,
+            Empleado supervisorLinea, List<Turno> turnos)
+        {
+            this.Numero = numero;
+            this.Modelo = modelo;
+            this.Color = color;
+            this.Estado = estadoOrdenProduccion;
+            this.SupervisorLinea = supervisorLinea;
+            this.Turnos = turnos;
+        }
+
         public Boolean VerificarIncorporacionSupervisorCalidad()
         {
             if(SupervisorCalidadIncorporado != null)
@@ -77,7 +88,8 @@ namespace IS_TP1._2_Servidor.Dominio
 
         public void CrearBloqueTrabajo(DateTime horaActual, Empleado supervisorCalidad)
         {
-
+            Turno ultimoTurno = Turnos.Last();
+            ultimoTurno.CrearBloqueTrabajo(horaActual, supervisorCalidad);
         }
     }
 }

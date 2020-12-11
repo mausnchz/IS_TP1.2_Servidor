@@ -72,5 +72,10 @@ C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Se
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\obj\Debug\IS_TP1.2_Servidor.Interfaz.csproj.CopyComplete
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\obj\Debug\IS_TP1.2_Servidor.Servicio.dll
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\obj\Debug\IS_TP1.2_Servidor.Servicio.pdb
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\Aplicacion.dll
-C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\Aplicacion.pdb
+C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Aplicacion.dll
+C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Dominio.dll
+C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Datos.dll
+C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Aplicacion.pdb
+C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Dominio.pdb
+C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Datos.pdb
+C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Servicio\bin\IS_TP1.2_Servidor.Datos.dll.config

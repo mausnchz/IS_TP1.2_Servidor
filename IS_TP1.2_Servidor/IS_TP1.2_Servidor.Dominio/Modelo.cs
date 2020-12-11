@@ -11,5 +11,12 @@ namespace IS_TP1._2_Servidor.Dominio
         public string SKU { get; set; }
         public string Denominacion { get; set; }
         public int Objetivo { get; set; }
+
+        public Modelo(string SKU, string denominacion, int objetivo)
+        {
+            this.SKU = SKU;
+            this.Denominacion = denominacion;
+            this.Objetivo = objetivo;
+        }
     }
 }

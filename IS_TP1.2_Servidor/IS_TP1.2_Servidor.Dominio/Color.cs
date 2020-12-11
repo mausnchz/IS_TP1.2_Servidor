@@ -11,5 +11,11 @@ namespace IS_TP1._2_Servidor.Dominio
         public string Codigo { get; set; }
         public string Descripcion { get; set; }
 
+        public Color(string codigo, string descripcion)
+        {
+            this.Codigo = codigo;
+            this.Descripcion = descripcion;
+        }
+
     }
 }

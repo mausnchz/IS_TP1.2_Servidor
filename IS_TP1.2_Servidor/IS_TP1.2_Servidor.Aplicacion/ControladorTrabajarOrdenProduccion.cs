@@ -10,9 +10,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
 {
     public class ControladorTrabajarOrdenProduccion
     {
-        private Repositorio<OrdenProduccion> repositorioOrdenProduccion;
-        private Repositorio<TipoTurno> repositorioTipoTurno;
-        private Repositorio<Usuario> repositorioUsuario;
+        private Repositorio repositorio;
         private DateTime horaActual;
         private OrdenProduccion ordenProduccion;
         private List<TipoTurno> tiposTurno;
@@ -20,16 +18,14 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
         public ControladorTrabajarOrdenProduccion()
         {
-            repositorioOrdenProduccion = new Repositorio<OrdenProduccion>();
-            repositorioTipoTurno = new Repositorio<TipoTurno>();
-            repositorioUsuario = new Repositorio<Usuario>();
+            repositorio = Repositorio.ObtenerInstancia();
         }
         public OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
         {
             horaActual = new DateTime();
-            ordenProduccion = repositorioOrdenProduccion.ObtenerPorFiltro(z => z.Numero == numeroOrdenProduccion).FirstOrDefault();
-            tiposTurno = repositorioTipoTurno.ObtenerTodos().ToList();
-            usuario = repositorioUsuario.ObtenerPorFiltro(z => z.Nombre == nombreUsuario).FirstOrDefault();
+            ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
+            tiposTurno = repositorio.ObtenerTiposTurno();
+            usuario = repositorio.ObtenerUsuario(nombreUsuario);
 
             Boolean existeTipoTurno = VerificarExistenciaTipoTurno(horaActual);
             
@@ -69,7 +65,6 @@ namespace IS_TP1._2_Servidor.Aplicacion
                 Console.WriteLine("No existe ningún turno en curso.");
             }
 
-            repositorioOrdenProduccion.GuardarCambios();
             return ordenProduccion;
         }
 

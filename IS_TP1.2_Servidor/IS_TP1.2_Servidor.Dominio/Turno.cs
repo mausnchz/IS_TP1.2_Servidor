@@ -14,6 +14,16 @@ namespace IS_TP1._2_Servidor.Dominio
         public int CantidadParesHermanadosSegundaCalidad { get; set; }
         public List<BloqueTrabajo> BloquesTrabajo { get; set; }
 
+        public Turno(DateTime fecha, TipoTurno tipoTurno, int cantidadParesHermanadosPrimeraCalidad,
+            int cantidadParesHermanadosSegundaCalidad, List<BloqueTrabajo> bloquesTrabajo)
+        {
+            this.Fecha = fecha;
+            this.Tipo = tipoTurno;
+            this.CantidadParesHermanadosPrimeraCalidad = cantidadParesHermanadosPrimeraCalidad;
+            this.CantidadParesHermanadosSegundaCalidad = cantidadParesHermanadosSegundaCalidad;
+            this.BloquesTrabajo = bloquesTrabajo;
+        }
+
         public Turno(DateTime horaActual, TipoTurno tipoTurno, Empleado supervisorCalidad)
         {
             Tipo = tipoTurno;

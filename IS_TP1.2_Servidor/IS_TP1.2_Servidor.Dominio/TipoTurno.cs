@@ -12,5 +12,13 @@ namespace IS_TP1._2_Servidor.Dominio
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFinalizacion { get; set; }
 
+        public TipoTurno() { }
+        public TipoTurno(string descripcion, DateTime horaInicio, DateTime horaFinalizacion)
+        {
+            this.Descripcion = descripcion;
+            this.HoraInicio = horaInicio;
+            this.HoraFinalizacion = horaFinalizacion;
+        }
+
     }
 }

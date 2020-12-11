@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IS_TP1.2_Servidor.Datos\IS_TP1.2_Servidor.Datos.csproj">
-      <Project>{abc7fa22-8561-4296-b969-2dff67057084}</Project>
+      <Project>{4F7C66B7-5878-4F1E-A90B-90A0C5F0A604}</Project>
       <Name>IS_TP1.2_Servidor.Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\IS_TP1.2_Servidor.Dominio\IS_TP1.2_Servidor.Dominio.csproj">
