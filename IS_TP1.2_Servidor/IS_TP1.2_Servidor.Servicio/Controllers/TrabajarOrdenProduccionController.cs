@@ -11,7 +11,7 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 {
     public class TrabajarOrdenProduccionController : ApiController
     {
-        [Route("api/TrabajarOrdenProduccion/IncorporarseOrdenProduccion/{numeroOrdenProduccion: string}/{nombreUsuario: string}")]
+        [Route("api/TrabajarOrdenProduccion/IncorporarseOrdenProduccion/{numeroOrdenProduccion}/{nombreUsuario}")]
         [HttpPost]
         public OrdenProduccion IncorporarseOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
         {
@@ -19,7 +19,7 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
             return controladorTrabajarOrdenProduccion.IncorporarseOrdenProduccion(numeroOrdenProduccion, nombreUsuario);
         }
 
-        [Route("api/TrabajarOrdenProduccion/AbandonarOrdenProduccion/{numeroOrdenProduccion: string}")]
+        [Route("api/TrabajarOrdenProduccion/AbandonarOrdenProduccion/{numeroOrdenProduccion}")]
         [HttpPost]
         public List<OrdenProduccion> AbandonarOrdenProduccion(string numeroOrdenProduccion)
         {

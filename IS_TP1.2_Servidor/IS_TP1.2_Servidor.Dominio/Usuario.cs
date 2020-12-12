@@ -12,5 +12,12 @@ namespace IS_TP1._2_Servidor.Dominio
         public string Contraseña { get; set; }
         public Empleado Empleado { get; set; }
 
+        public Usuario(string nombre, string contraseña, Empleado empleado)
+        {
+            this.Nombre = nombre;
+            this.Contraseña = contraseña;
+            this.Empleado = empleado;
+        }
+
     }
 }

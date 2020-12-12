@@ -59,6 +59,15 @@ namespace IS_TP1._2_Servidor.Dominio
             return false;
         }
 
+        public Boolean VerificarEstadoNoFinalizado()
+        {
+            if(Estado!= EstadoOrdenProduccion.FINALZIADA)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void IncorporarSupervisorCalidad(Empleado supervisorCalidad)
         {
             SupervisorCalidadIncorporado = supervisorCalidad;
@@ -121,6 +130,11 @@ namespace IS_TP1._2_Servidor.Dominio
         public void LiberarSupervisorCalidad()
         {
             SupervisorCalidadIncorporado = null;
+        }
+
+        public void PausarOrdenProduccion()
+        {
+            Estado = EstadoOrdenProduccion.PAUSADA;
         }
     }
 }

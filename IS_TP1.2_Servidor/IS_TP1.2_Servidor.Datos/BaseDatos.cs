@@ -9,7 +9,7 @@ namespace IS_TP1._2_Servidor.Datos
 {
     public sealed class BaseDatos
     {
-        private static readonly BaseDatos instancia = new BaseDatos();
+        private static BaseDatos instancia;
         private List<BloqueTrabajo> bloquesTrabajo;
         private List<Cargo> cargos;
         private List<Color> colores;
@@ -44,6 +44,11 @@ namespace IS_TP1._2_Servidor.Datos
 
         public static BaseDatos ObtenerInstancia()
         {
+            if(instancia == null)
+            {
+                instancia = new BaseDatos();
+            }
+
             return instancia;
         }
 
@@ -55,6 +60,7 @@ namespace IS_TP1._2_Servidor.Datos
             GenerarCargos();
             GenerarTiposDefecto();
             GenerarEmpleados();
+            GenerarUsuarios();
             GenerarDefectos();
             GenerarDefectosRegistrados();
             GenerarBloquesTrabajo();
@@ -180,6 +186,14 @@ namespace IS_TP1._2_Servidor.Datos
             empleados.Add(new Empleado("Apellido", "Nombre", "40345496", "email@email.com", cargos[2]));
         }
 
+        private void GenerarUsuarios()
+        {
+            usuarios.Add(new Usuario("administrativo", "contraseña", empleados[0]));
+            usuarios.Add(new Usuario("supervisorCalidad", "contraseña", empleados[1]));
+            usuarios.Add(new Usuario("supervisorLinea", "contraseña", empleados[2]));
+
+        }
+
         private void GenerarDefectos()
         {
             defectos.Add(new Defecto("Defecto No.1", tiposDefecto[0]));
@@ -210,7 +224,6 @@ namespace IS_TP1._2_Servidor.Datos
             defectosRegistrados.Add(new DefectoRegistrado(defectos[9], Orientacion.IZQUIERDO));
             defectosRegistrados.Add(new DefectoRegistrado(defectos[10], Orientacion.DERECHO));
             defectosRegistrados.Add(new DefectoRegistrado(defectos[11], Orientacion.IZQUIERDO));
-            defectosRegistrados.Add(new DefectoRegistrado(defectos[12], Orientacion.DERECHO));
         }
 
         private void GenerarBloquesTrabajo()

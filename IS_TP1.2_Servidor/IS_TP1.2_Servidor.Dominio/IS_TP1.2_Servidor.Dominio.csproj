@@ -48,6 +48,7 @@
     <Compile Include="DefectoRegistrado.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="EstadoOrdenProduccion.cs" />
+    <Compile Include="LineaTrabajo.cs" />
     <Compile Include="Modelo.cs" />
     <Compile Include="OrdenProduccion.cs" />
     <Compile Include="Orientacion.cs" />

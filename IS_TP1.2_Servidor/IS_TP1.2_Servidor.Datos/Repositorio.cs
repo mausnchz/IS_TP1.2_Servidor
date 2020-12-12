@@ -9,15 +9,20 @@ namespace IS_TP1._2_Servidor.Datos
 {
     public sealed class Repositorio
     {
-        private static readonly Repositorio instancia = new Repositorio();
-        private BaseDatos baseDatos = BaseDatos.ObtenerInstancia();
+        private static Repositorio instancia;
+        private BaseDatos baseDatos;
 
         private Repositorio()
         {
+            baseDatos = BaseDatos.ObtenerInstancia();
         }
 
         public static Repositorio ObtenerInstancia()
         {
+            if(instancia == null)
+            {
+                instancia = new Repositorio();
+            }
             return instancia;
         }
 
