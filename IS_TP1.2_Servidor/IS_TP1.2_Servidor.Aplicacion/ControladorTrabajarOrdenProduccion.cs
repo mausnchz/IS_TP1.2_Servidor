@@ -20,7 +20,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
         {
             repositorio = Repositorio.ObtenerInstancia();
         }
-        public OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
+        public OrdenProduccion IncorporarseOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
         {
             horaActual = new DateTime();
             ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
@@ -91,6 +91,38 @@ namespace IS_TP1._2_Servidor.Aplicacion
                 }
             }
             return tipoTurno;
+        }
+
+        public List<OrdenProduccion> AbandonarOrdenProduccion(string numeroOrdenProduccion)
+        {
+            List<LineaTrabajo> lineasTrabajo = repositorio.ObtenerLineasTrabajo();
+            OrdenProduccion ordenProduccion = ObtenerOrdenProduccion(numeroOrdenProduccion, lineasTrabajo);
+            Boolean existeEstadoPausada = ordenProduccion.VerificarEstadoPausada();
+
+            if (existeEstadoPausada)
+            {
+                ordenProduccion.LiberarSupervisorCalidad();
+            }
+
+            return repositorio.ObtenerOrdenesProduccion();
+        }
+
+        private static OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion, List<LineaTrabajo> lineasTrabajo)
+        {
+            OrdenProduccion ordenProduccion = new OrdenProduccion();
+
+            foreach (LineaTrabajo lt in lineasTrabajo)
+            {
+                foreach (OrdenProduccion op in lt.OrdenesProduccion)
+                {
+                    if (op.Numero == numeroOrdenProduccion)
+                    {
+                        ordenProduccion = op;
+                    }
+                }
+            }
+
+            return ordenProduccion;
         }
     }
 }

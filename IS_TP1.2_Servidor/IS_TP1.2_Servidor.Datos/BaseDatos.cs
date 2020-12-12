@@ -22,6 +22,7 @@ namespace IS_TP1._2_Servidor.Datos
         private List<TipoTurno> tiposTurno;
         private List<Turno> turnos;
         private List<Usuario> usuarios;
+        private List<LineaTrabajo> lineasTrabajo;
 
         private BaseDatos()
         {
@@ -37,6 +38,7 @@ namespace IS_TP1._2_Servidor.Datos
             tiposTurno = new List<TipoTurno>();
             turnos = new List<Turno>();
             usuarios = new List<Usuario>();
+            lineasTrabajo = new List<LineaTrabajo>();
             GenerarDatos();
         }
 
@@ -58,6 +60,17 @@ namespace IS_TP1._2_Servidor.Datos
             GenerarBloquesTrabajo();
             GenerarTurnos();
             GenerarOrdenesProduccion();
+            GenerarLineasTrabajo();
+        }
+
+        private void GenerarLineasTrabajo()
+        {
+            lineasTrabajo.Add(new LineaTrabajo("0001", new List<OrdenProduccion>(ordenesProduccion)));
+        }
+
+        public List<LineaTrabajo> ObtenerLineasTrabajo()
+        {
+            return lineasTrabajo;
         }
 
         public List<OrdenProduccion> ObtenerOrdenesProduccion()

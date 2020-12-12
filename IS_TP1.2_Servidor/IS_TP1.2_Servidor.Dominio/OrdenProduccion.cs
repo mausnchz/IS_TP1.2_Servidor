@@ -49,6 +49,16 @@ namespace IS_TP1._2_Servidor.Dominio
             return false;
         }
 
+        public Boolean VerificarEstadoPausada()
+        {
+            if(Estado == EstadoOrdenProduccion.PAUSADA)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public void IncorporarSupervisorCalidad(Empleado supervisorCalidad)
         {
             SupervisorCalidadIncorporado = supervisorCalidad;
@@ -56,15 +66,22 @@ namespace IS_TP1._2_Servidor.Dominio
 
         public Boolean VerificarExistenciaTurno(DateTime horaActual, TipoTurno tipoTurno)
         {
-            foreach(Turno t in Turnos)
+            try
             {
-                if(t.Fecha.Date == horaActual.Date && t.Tipo == tipoTurno)
+                foreach (Turno t in Turnos)
                 {
-                    return true;
+                    if (t.Fecha.Date == horaActual.Date && t.Tipo == tipoTurno)
+                    {
+                        return true;
+                    }
                 }
-            }
 
-            return false;
+                return false;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
 
         public void CrearTurno(DateTime horaActual, TipoTurno tipoTurno, Empleado supervisorCalidad)
@@ -75,14 +92,21 @@ namespace IS_TP1._2_Servidor.Dominio
 
         public Boolean VerificarExistenciaBloqueTrabajo(DateTime horaActual)
         {
-            Turno ultimoTurno = Turnos.Last();
-            BloqueTrabajo ultimoBloqueTrabajo = ultimoTurno.BloquesTrabajo.Last();
-
-            if(ultimoBloqueTrabajo.Hora == horaActual.Hour)
+            try
             {
-                return true;
+                Turno ultimoTurno = Turnos.Last();
+                BloqueTrabajo ultimoBloqueTrabajo = ultimoTurno.BloquesTrabajo.Last();
+
+                if (ultimoBloqueTrabajo.Hora == horaActual.Hour)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch(Exception e)
             {
                 return false;
             }
@@ -92,6 +116,11 @@ namespace IS_TP1._2_Servidor.Dominio
         {
             Turno ultimoTurno = Turnos.Last();
             ultimoTurno.CrearBloqueTrabajo(horaActual, supervisorCalidad);
+        }
+
+        public void LiberarSupervisorCalidad()
+        {
+            SupervisorCalidadIncorporado = null;
         }
     }
 }

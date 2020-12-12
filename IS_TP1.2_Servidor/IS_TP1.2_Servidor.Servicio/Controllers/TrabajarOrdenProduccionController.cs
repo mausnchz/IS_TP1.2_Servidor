@@ -11,21 +11,20 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 {
     public class TrabajarOrdenProduccionController : ApiController
     {
-        // POST: api/TrabajarOrdenProduccion
-        public OrdenProduccion Post([FromBody]string numeroOrdenProduccion, string nombreUsuario)
+        [Route("api/TrabajarOrdenProduccion/IncorporarseOrdenProduccion/{numeroOrdenProduccion: string}/{nombreUsuario: string}")]
+        [HttpPost]
+        public OrdenProduccion IncorporarseOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
         {
             ControladorTrabajarOrdenProduccion controladorTrabajarOrdenProduccion = new ControladorTrabajarOrdenProduccion();
-            return controladorTrabajarOrdenProduccion.ObtenerOrdenProduccion(numeroOrdenProduccion, nombreUsuario);
+            return controladorTrabajarOrdenProduccion.IncorporarseOrdenProduccion(numeroOrdenProduccion, nombreUsuario);
         }
 
-        // PUT: api/TrabajarOrdenProduccion/5
-        public void Put(int id, [FromBody]string value)
+        [Route("api/TrabajarOrdenProduccion/AbandonarOrdenProduccion/{numeroOrdenProduccion: string}")]
+        [HttpPost]
+        public List<OrdenProduccion> AbandonarOrdenProduccion(string numeroOrdenProduccion)
         {
-        }
-
-        // DELETE: api/TrabajarOrdenProduccion/5
-        public void Delete(int id)
-        {
+            ControladorTrabajarOrdenProduccion controladorTrabajarOrdenProduccion = new ControladorTrabajarOrdenProduccion();
+            return controladorTrabajarOrdenProduccion.AbandonarOrdenProduccion(numeroOrdenProduccion);
         }
     }
 }

@@ -35,5 +35,15 @@ namespace IS_TP1._2_Servidor.Datos
         {
             return baseDatos.ObtenerUsuarios().Where(z => z.Nombre == nombreUsuario).FirstOrDefault();
         }
+
+        public List<OrdenProduccion> ObtenerOrdenesProduccion()
+        {
+            return baseDatos.ObtenerOrdenesProduccion();
+        }
+
+        public List<LineaTrabajo> ObtenerLineasTrabajo()
+        {
+            return baseDatos.ObtenerLineasTrabajo();
+        }
     }
 }
