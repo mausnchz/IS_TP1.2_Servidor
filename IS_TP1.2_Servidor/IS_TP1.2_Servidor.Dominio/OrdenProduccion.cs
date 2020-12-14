@@ -127,6 +127,24 @@ namespace IS_TP1._2_Servidor.Dominio
             ultimoTurno.CrearBloqueTrabajo(horaActual, supervisorCalidad);
         }
 
+        public void CrearBloqueTrabajo(DateTime horaActual, Defecto defecto, string orientacion, Empleado supervisorCalidad)
+        {
+            Turno ultimoTurno = Turnos.Last();
+            ultimoTurno.CrearBloqueTrabajo(horaActual, defecto, orientacion, supervisorCalidad);
+        }
+
+        public void RegistrarDefecto(Defecto defecto, string orientacion)
+        {
+            Turno ultimoTurno = Turnos.Last();
+            ultimoTurno.RegistrarDefecto(defecto, orientacion);
+        }
+
+        public void QuitarDefecto(Defecto defecto, string orientacion)
+        {
+            Turno ultimoTurno = Turnos.Last();
+            ultimoTurno.QuitarDefecto(defecto, orientacion);
+        }
+
         public void LiberarSupervisorCalidad()
         {
             SupervisorCalidadIncorporado = null;

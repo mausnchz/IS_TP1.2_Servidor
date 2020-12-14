@@ -50,5 +50,11 @@ namespace IS_TP1._2_Servidor.Datos
         {
             return baseDatos.ObtenerLineasTrabajo();
         }
+
+        public Defecto ObtenerDefecto(string tipoDefecto, string nombreDefecto)
+        {
+            return baseDatos.ObtenerDefectos().FirstOrDefault(z => z.Tipo.Descripcion == tipoDefecto
+                && z.Descripcion == nombreDefecto);
+        }
     }
 }

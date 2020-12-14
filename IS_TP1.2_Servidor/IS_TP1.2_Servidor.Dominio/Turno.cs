@@ -39,5 +39,23 @@ namespace IS_TP1._2_Servidor.Dominio
             BloqueTrabajo bloqueTrabajo = new BloqueTrabajo(horaActual, supervisorCalidad);
             BloquesTrabajo.Add(bloqueTrabajo);
         }
+
+        public void CrearBloqueTrabajo(DateTime horaActual, Defecto defecto, string orientacion, Empleado supervisorCalidad)
+        {
+            BloqueTrabajo bloqueTrabajo = new BloqueTrabajo(horaActual, defecto, orientacion, supervisorCalidad);
+            BloquesTrabajo.Add(bloqueTrabajo);
+        }
+
+        public void RegistrarDefecto(Defecto defecto, string orientacion)
+        {
+            BloqueTrabajo ultimoBloqueTrabajo = BloquesTrabajo.Last();
+            ultimoBloqueTrabajo.RegistrarDefecto(defecto, orientacion);
+        }
+
+        public void QuitarDefecto(Defecto defecto, string orientacion)
+        {
+            BloqueTrabajo ultimoBloqueTrabajo = BloquesTrabajo.Last();
+            ultimoBloqueTrabajo.QuitarDefecto(defecto, orientacion);
+        }
     }
 }
