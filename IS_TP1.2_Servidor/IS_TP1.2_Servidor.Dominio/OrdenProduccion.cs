@@ -141,5 +141,10 @@ namespace IS_TP1._2_Servidor.Dominio
         {
             Estado = EstadoOrdenProduccion.EN_CURSO;
         }
+
+        public void FinalizarOrdenProduccion()
+        {
+            Estado = EstadoOrdenProduccion.FINALZIADA;
+        }
     }
 }

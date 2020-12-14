@@ -59,5 +59,32 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
             return repositorio.ObtenerOrdenesProduccion();
         }
+
+        public List<OrdenProduccion> RegistrarFinalizacionOrdenProduccion(string numeroOrdenProduccion)
+        {
+            OrdenProduccion ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
+            DateTime horaActual = DateTime.Now;
+            List<TipoTurno> tiposTurno = repositorio.ObtenerTiposTurno();
+            Boolean horaActualCorrespondeTipoTurnoHolgado = false;
+
+            foreach (TipoTurno tt in tiposTurno)
+            {
+                if (horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour < tt.HoraFinalizacion.Hour)
+                {
+                    horaActualCorrespondeTipoTurnoHolgado = true;
+                }
+                else if (horaActual.Hour == tt.HoraFinalizacion.Hour && horaActual.Minute < 30)
+                {
+                    horaActualCorrespondeTipoTurnoHolgado = true;
+                }
+            }
+
+            if (horaActualCorrespondeTipoTurnoHolgado)
+            {
+                ordenProduccion.FinalizarOrdenProduccion();
+            }
+
+            return repositorio.ObtenerOrdenesProduccion();
+        }
     }
 }

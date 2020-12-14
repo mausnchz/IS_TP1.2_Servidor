@@ -18,5 +18,21 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
             ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
             return controladorAdministrarOrdenProduccion.RegistrarPausaOrdenProduccion(numeroOrdenProduccion);
         }
+
+        [Route("api/AdministrarOrdenProduccion/RegistrarReanudacionOrdenProduccion/{numeroOrdenProduccion}")]
+        [HttpPost]
+        public List<OrdenProduccion> RegistrarReanudacionOrdenProduccion(string numeroOrdenProduccion)
+        {
+            ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
+            return controladorAdministrarOrdenProduccion.RegistrarReanudacionOrdenProduccion(numeroOrdenProduccion);
+        }
+
+        [Route("api/AdministrarOrdenProduccion/RegistrarFinalizacionOrdenProduccion/{numeroOrdenProduccion}")]
+        [HttpPost]
+        public List<OrdenProduccion> RegistrarFinalizacionOrdenProduccion(string numeroOrdenProduccion)
+        {
+            ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
+            return controladorAdministrarOrdenProduccion.RegistrarFinalizacionOrdenProduccion(numeroOrdenProduccion);
+        }
     }
 }
