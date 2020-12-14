@@ -16,7 +16,7 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
         public List<OrdenProduccion> RegistrarPausaOrdenProduccion(string numeroOrdenProduccion)
         {
             ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
-            return ControladorAdministrarOrdenProduccion.RegistrarPausaOrdenProduccion(numeroOrdenProduccion);
+            return controladorAdministrarOrdenProduccion.RegistrarPausaOrdenProduccion(numeroOrdenProduccion);
         }
     }
 }

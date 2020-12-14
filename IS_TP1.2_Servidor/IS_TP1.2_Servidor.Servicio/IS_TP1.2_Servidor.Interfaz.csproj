@@ -108,9 +108,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\IS_TP1.2_Servidor.Aplicacion\IS_TP1.2_Servidor.Aplicacion.csproj">
       <Project>{119cb1bf-655f-4392-b192-5a935f4a57fc}</Project>

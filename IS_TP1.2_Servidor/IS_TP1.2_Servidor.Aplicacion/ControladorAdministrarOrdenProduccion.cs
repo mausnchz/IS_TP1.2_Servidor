@@ -33,5 +33,31 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
             return repositorio.ObtenerOrdenesProduccion();
         }
+
+        public List<OrdenProduccion> RegistrarReanudacionOrdenProduccion(string numeroOrdenProduccion)
+        {
+            OrdenProduccion ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
+            DateTime horaActual = DateTime.Now;
+            List<TipoTurno> tiposTurno = repositorio.ObtenerTiposTurno();
+            Boolean horaActualCorrespondeTipoTurno = false;
+            Boolean existeEstadoNoFinalizado = true;
+
+            foreach (TipoTurno tt in tiposTurno)
+            {
+                if(horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour < tt.HoraFinalizacion.Hour)
+                {
+                    horaActualCorrespondeTipoTurno = true;
+                }
+            }
+
+            existeEstadoNoFinalizado = ordenProduccion.VerificarEstadoNoFinalizado();
+
+            if (horaActualCorrespondeTipoTurno && existeEstadoNoFinalizado)
+            {
+                ordenProduccion.ReanudarOrdenProduccion();
+            }
+
+            return repositorio.ObtenerOrdenesProduccion();
+        }
     }
 }

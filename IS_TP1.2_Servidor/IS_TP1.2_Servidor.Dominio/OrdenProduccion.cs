@@ -136,5 +136,10 @@ namespace IS_TP1._2_Servidor.Dominio
         {
             Estado = EstadoOrdenProduccion.PAUSADA;
         }
+
+        public void ReanudarOrdenProduccion()
+        {
+            Estado = EstadoOrdenProduccion.EN_CURSO;
+        }
     }
 }
