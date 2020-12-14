@@ -134,5 +134,47 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
             return ordenProduccion;
         }
+
+        public OrdenProduccion GestionarParesHermanados(string numeroOrdenProduccion, int cantidadParesHermanadosPrimeraCalidad, 
+            int cantidadParesHermanadosSegundaCalidad)
+        {
+            DateTime horaActual = DateTime.Now;
+            List<TipoTurno> tiposTurno = repositorio.ObtenerTiposTurno();
+            OrdenProduccion ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
+            Boolean horaActualCorrespondeTipoTurnoHolgado = false;
+
+            foreach (TipoTurno tt in tiposTurno)
+            {
+                if (horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour < tt.HoraFinalizacion.Hour)
+                {
+                    horaActualCorrespondeTipoTurnoHolgado = true;
+                }
+                else if (horaActual.Hour == tt.HoraFinalizacion.Hour && horaActual.Minute < 30)
+                {
+                    horaActualCorrespondeTipoTurnoHolgado = true;
+                }
+            }
+
+            if (horaActualCorrespondeTipoTurnoHolgado)
+            {
+                Boolean existeEstadoEnCurso = ordenProduccion.VerificarEstadoEnCurso();
+
+                if (existeEstadoEnCurso)
+                {
+                    ordenProduccion.RegistrarParesHermanados(cantidadParesHermanadosPrimeraCalidad,
+                        cantidadParesHermanadosSegundaCalidad);
+                }
+                else
+                {
+                    Console.WriteLine("La orden de producción no se encuentra en curso.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ningún turno se encuentra en curso.");
+            }
+
+            return ordenProduccion;
+        }
     }
 }

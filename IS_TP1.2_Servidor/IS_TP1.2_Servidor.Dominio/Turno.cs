@@ -76,5 +76,12 @@ namespace IS_TP1._2_Servidor.Dominio
             BloqueTrabajo ultimoBloqueTrabajo = BloquesTrabajo.Last();
             ultimoBloqueTrabajo.QuitarParPrimeraCalidad();
         }
+
+        public void RegistrarParesHermanados(int cantidadParesHermanadosPrimeraCalidad,
+                        int cantidadParesHermanadosSegundaCalidad)
+        {
+            CantidadParesHermanadosPrimeraCalidad += cantidadParesHermanadosPrimeraCalidad;
+            CantidadParesHermanadosSegundaCalidad += cantidadParesHermanadosSegundaCalidad;
+        }
     }
 }

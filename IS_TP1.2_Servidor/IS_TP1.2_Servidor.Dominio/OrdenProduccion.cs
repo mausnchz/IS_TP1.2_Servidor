@@ -163,6 +163,12 @@ namespace IS_TP1._2_Servidor.Dominio
             ultimoTurno.QuitarParPrimeraCalidad();
         }
 
+        public void RegistrarParesHermanados(int cantidadParesHermanadosPrimeraCalidad,
+                        int cantidadParesHermanadosSegundaCalidad)
+        {
+            Turno ultimoTurno = Turnos.Last();
+        }
+
         public void LiberarSupervisorCalidad()
         {
             SupervisorCalidadIncorporado = null;
