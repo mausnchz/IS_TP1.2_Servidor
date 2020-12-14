@@ -133,6 +133,12 @@ namespace IS_TP1._2_Servidor.Dominio
             ultimoTurno.CrearBloqueTrabajo(horaActual, defecto, orientacion, supervisorCalidad);
         }
 
+        public void CrearBloqueTrabajoRegistrarParPrimeraCalidad(DateTime horaActual, Empleado supervisorCalidad)
+        {
+            Turno ultimoTurno = Turnos.Last();
+            ultimoTurno.CrearBloqueTrabajoRegistrarParPrimeraCalidad(horaActual, supervisorCalidad);
+        }
+
         public void RegistrarDefecto(Defecto defecto, string orientacion)
         {
             Turno ultimoTurno = Turnos.Last();
@@ -143,6 +149,18 @@ namespace IS_TP1._2_Servidor.Dominio
         {
             Turno ultimoTurno = Turnos.Last();
             ultimoTurno.QuitarDefecto(defecto, orientacion);
+        }
+
+        public void RegistrarParPrimeraCalidad()
+        {
+            Turno ultimoTurno = Turnos.Last();
+            ultimoTurno.RegistrarParPrimeraCalidad();
+        }
+
+        public void QuitarParPrimeraCalidad()
+        {
+            Turno ultimoTurno = Turnos.Last();
+            ultimoTurno.QuitarParPrimeraCalidad();
         }
 
         public void LiberarSupervisorCalidad()

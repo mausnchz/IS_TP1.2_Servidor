@@ -21,5 +21,14 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
             return controladorRegistrarHallazgosOrdenProduccion.GestionarDefecto(numeroOrdenProduccion, tipoDefecto, nombreDefecto,
                 orientacion, cantidad, nombreUsuario);
         }
+
+        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParPrimeraCalidad/{numeroOrdenProduccion}/" +
+            "{cantidad: int}/{nombreUsuario}")]
+        [HttpPost]
+        public OrdenProduccion GestionarParPrimeraCalidad(string numeroOrdenProduccion, int cantidad, string nombreUsuario)
+        {
+            ControladorRegistrarHallazgosOrdenProduccion controladorRegistrarHallazgosOrdenProduccion = new ControladorRegistrarHallazgosOrdenProduccion();
+            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(numeroOrdenProduccion, cantidad, nombreUsuario);
+        }
     }
 }

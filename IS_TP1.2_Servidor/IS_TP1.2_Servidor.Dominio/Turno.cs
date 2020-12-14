@@ -46,6 +46,13 @@ namespace IS_TP1._2_Servidor.Dominio
             BloquesTrabajo.Add(bloqueTrabajo);
         }
 
+        public void CrearBloqueTrabajoRegistrarParPrimeraCalidad(DateTime horaActual, Empleado supervisorCalidad)
+        {
+            BloqueTrabajo ultimoBloqueTrabajo = new BloqueTrabajo(horaActual, supervisorCalidad);
+            ultimoBloqueTrabajo.RegistrarParPrimeraCalidad();
+            BloquesTrabajo.Add(ultimoBloqueTrabajo);
+        }
+
         public void RegistrarDefecto(Defecto defecto, string orientacion)
         {
             BloqueTrabajo ultimoBloqueTrabajo = BloquesTrabajo.Last();
@@ -56,6 +63,18 @@ namespace IS_TP1._2_Servidor.Dominio
         {
             BloqueTrabajo ultimoBloqueTrabajo = BloquesTrabajo.Last();
             ultimoBloqueTrabajo.QuitarDefecto(defecto, orientacion);
+        }
+
+        public void RegistrarParPrimeraCalidad()
+        {
+            BloqueTrabajo ultimoBloqueTrabajo = BloquesTrabajo.Last();
+            ultimoBloqueTrabajo.RegistrarParPrimeraCalidad();
+        }
+
+        public void QuitarParPrimeraCalidad()
+        {
+            BloqueTrabajo ultimoBloqueTrabajo = BloquesTrabajo.Last();
+            ultimoBloqueTrabajo.QuitarParPrimeraCalidad();
         }
     }
 }

@@ -71,5 +71,16 @@ namespace IS_TP1._2_Servidor.Dominio
                 z.Defecto.Tipo.Descripcion == defecto.Tipo.Descripcion);
             DefectosRegistrados.Remove(defectoRegistradoAQuitar);
         }
+
+        public void RegistrarParPrimeraCalidad()
+        {
+            CantidadParesPrimeraCalidad++;
+        }
+
+        public void QuitarParPrimeraCalidad()
+        {
+            CantidadParesPrimeraCalidad--;
+        }
+
     }
 }

@@ -76,5 +76,63 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
             return ordenProduccion;
         }
+
+        public OrdenProduccion GestionarParPrimeraCalidad(string numeroOrdenProduccion, int cantidad, string nombreUsuario)
+        {
+            DateTime horaActual = DateTime.Now;
+            List<TipoTurno> tiposTurno = repositorio.ObtenerTiposTurno();
+            OrdenProduccion ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
+            Boolean horaActualCorrespondeTipoTurnoHolgado = false;
+
+            foreach (TipoTurno tt in tiposTurno)
+            {
+                if (horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour < tt.HoraFinalizacion.Hour)
+                {
+                    horaActualCorrespondeTipoTurnoHolgado = true;
+                }
+                else if (horaActual.Hour == tt.HoraFinalizacion.Hour && horaActual.Minute < 30)
+                {
+                    horaActualCorrespondeTipoTurnoHolgado = true;
+                }
+            }
+
+            if (horaActualCorrespondeTipoTurnoHolgado)
+            {
+                Empleado supervisorCalidad = repositorio.ObtenerUsuario(nombreUsuario).Empleado;
+                Boolean existeEstadoEnCurso = ordenProduccion.VerificarEstadoEnCurso();
+
+                if (existeEstadoEnCurso)
+                {
+                    Boolean existeBloqueTrabajo = ordenProduccion.VerificarExistenciaBloqueTrabajo(horaActual);
+
+                    if (!existeBloqueTrabajo && cantidad == 1)
+                    {
+                        ordenProduccion.CrearBloqueTrabajoRegistrarParPrimeraCalidad(horaActual, supervisorCalidad);
+                    }
+                    else if (!existeBloqueTrabajo && cantidad == -1)
+                    {
+                        Console.WriteLine("La cantidad de pares de primera calidad registrados en el bloque de trabajo actual es 0.");
+                    }
+                    else if (existeBloqueTrabajo && cantidad == 1)
+                    {
+                        ordenProduccion.RegistrarParPrimeraCalidad();
+                    }
+                    else if (existeBloqueTrabajo && cantidad == -1)
+                    {
+                        ordenProduccion.QuitarParPrimeraCalidad();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("La orden de producción no se encuentra en curso.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ningún turno se encuentra en curso.");
+            }
+
+            return ordenProduccion;
+        }
     }
 }
