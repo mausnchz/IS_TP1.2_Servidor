@@ -18,6 +18,13 @@ namespace IS_TP1._2_Servidor.Dominio
             this.Contraseña = contraseña;
             this.Empleado = empleado;
         }
-
+        public Boolean validarContraseña(String contraseña)
+        {
+            if (this.Contraseña.Equals(contraseña))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
