@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControladorGestionarColor.cs" />
     <Compile Include="ControladorGestionarModelo.cs" />
     <Compile Include="ControladorAdministrarOrdenProduccion.cs" />
     <Compile Include="ControladorAutenticarUsuario.cs" />

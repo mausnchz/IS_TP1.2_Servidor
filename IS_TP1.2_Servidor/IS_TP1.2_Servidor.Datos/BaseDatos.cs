@@ -75,6 +75,12 @@ namespace IS_TP1._2_Servidor.Datos
             return modelos;
 		}
 
+        public List<Color> InsertarNuevoColor(Color color)
+        {
+            colores.Add(color);
+            return colores;
+        }
+
         private void GenerarLineasTrabajo()
         {
             lineasTrabajo.Add(new LineaTrabajo("0001", new List<OrdenProduccion>(ordenesProduccion)));

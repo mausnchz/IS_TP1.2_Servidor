@@ -50,7 +50,7 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 		public List<Modelo> EliminarModel([FromBody] JObject data)
 		{
 			ControladorGestionarModelo controladorGestionarModelo = new ControladorGestionarModelo();
-			return controladorGestionarModelo.EliminarModelo(data["SKU"].ToString());
+			return controladorGestionarModelo.EliminarModelo(data["Codigo"].ToString());
 		}
 
 

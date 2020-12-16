@@ -37,6 +37,17 @@ namespace IS_TP1._2_Servidor.Datos
             return baseDatos.ObtenerModelos();
 		}
 
+        public List<Color> InsertarNuevoColor(Color color)
+        {
+            return baseDatos.InsertarNuevoColor(color);
+
+        }
+
+        public List<Color> ObtenerColores()
+        {
+            return baseDatos.ObtenerColores();
+        }
+
         public OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion)
         {
             return baseDatos.ObtenerOrdenesProduccion().Where(z => z.Numero == numeroOrdenProduccion).FirstOrDefault();
