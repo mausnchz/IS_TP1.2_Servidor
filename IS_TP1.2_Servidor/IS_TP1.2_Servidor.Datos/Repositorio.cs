@@ -26,6 +26,17 @@ namespace IS_TP1._2_Servidor.Datos
             return instancia;
         }
 
+        public List<Modelo> InsertarNuevoModelo(Modelo modelo)
+		{
+             return baseDatos.InsertarNuevoModelo(modelo);
+
+        }
+
+        public List<Modelo> ObtenerModelos()
+		{
+            return baseDatos.ObtenerModelos();
+		}
+
         public OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion)
         {
             return baseDatos.ObtenerOrdenesProduccion().Where(z => z.Numero == numeroOrdenProduccion).FirstOrDefault();

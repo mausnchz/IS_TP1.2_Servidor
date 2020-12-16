@@ -69,6 +69,12 @@ namespace IS_TP1._2_Servidor.Datos
             GenerarLineasTrabajo();
         }
 
+        public List<Modelo> InsertarNuevoModelo(Modelo modelo)
+		{
+            modelos.Add(modelo);
+            return modelos;
+		}
+
         private void GenerarLineasTrabajo()
         {
             lineasTrabajo.Add(new LineaTrabajo("0001", new List<OrdenProduccion>(ordenesProduccion)));
