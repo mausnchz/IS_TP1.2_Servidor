@@ -15,7 +15,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
         }
 
-        public Boolean autenticarUsuario(string nombreUsuario, string contraseña)
+        public Usuario autenticarUsuario(string nombreUsuario, string contraseña)
         {
             usuario = BuscarYValidarUsuarioYContraseña(nombreUsuario, contraseña);
 
@@ -23,13 +23,12 @@ namespace IS_TP1._2_Servidor.Aplicacion
             {
                 empleado = usuario.Empleado;
 
-                return true;
+                return usuario;
 
             }
             else
             {
-                Console.WriteLine("Usuario y / o contraseña incorrectos");
-                return false;
+                return null;
             }
 
         }
@@ -44,6 +43,10 @@ namespace IS_TP1._2_Servidor.Aplicacion
                 if (usuario.validarContraseña(contraseña))
                 {
                     return usuario;
+				}
+				else
+				{
+                    return null;
                 }
 
             }
