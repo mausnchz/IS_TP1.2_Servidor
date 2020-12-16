@@ -12,7 +12,7 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
     public class RegistrarHallazgosOrdenProduccionController : ApiController
     {
         [Route("api/RegistrarHallazgosOrdenProduccion/GestionarDefecto/{numeroOrdenProduccion}/{tipoDefecto}/" +
-            "{nombreDefecto}/{orientacion}/{cantidad: int}/{nombreUsuario}")]
+            "{nombreDefecto}/{orientacion}/{cantidad}/{nombreUsuario}")]
         [HttpPost]
         public OrdenProduccion GestionarDefecto(string numeroOrdenProduccion, string tipoDefecto, string nombreDefecto,
             string orientacion, int cantidad, string nombreUsuario)
@@ -23,7 +23,7 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
         }
 
         [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParPrimeraCalidad/{numeroOrdenProduccion}/" +
-            "{cantidad: int}/{nombreUsuario}")]
+            "{cantidad}/{nombreUsuario}")]
         [HttpPost]
         public OrdenProduccion GestionarParPrimeraCalidad(string numeroOrdenProduccion, int cantidad, string nombreUsuario)
         {
@@ -32,10 +32,10 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
         }
 
         [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParesHermanados/{numeroOrdenProduccion}/" +
-            "{cantidadParesHermanadosPrimeraCalidad: int}/{cantidadParesHermanadosSegundaCalidad: int}")]
+            "{cantidad}/{nombreUsuario}")]
         [HttpPost]
-        public OrdenProduccion GestionarParesHermanados(string numeroOrdenProduccion, int cantidadParesHermanadosPrimeraCalidad,
-            int cantidadParesHermanadosSegundaCalidad)
+        public OrdenProduccion GestionarParesHermanados(string numeroOrdenProduccion, int cantidad,
+            string nombreUsuario)
         {
             ControladorRegistrarHallazgosOrdenProduccion controladorRegistrarHallazgosOrdenProduccion = new ControladorRegistrarHallazgosOrdenProduccion();
             return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(numeroOrdenProduccion, cantidad, nombreUsuario);

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControladorAdministrarOrdenProduccion.cs" />
+    <Compile Include="ControladorAutenticarUsuario.cs" />
     <Compile Include="ControladorRegistrarHallazgosOrdenProduccion.cs" />
     <Compile Include="ControladorTrabajarOrdenProduccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

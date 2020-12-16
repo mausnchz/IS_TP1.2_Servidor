@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AutenticarUsuarioController.cs" />
     <Compile Include="Controllers\AdministrarOrdenProduccionController.cs" />
     <Compile Include="Controllers\RegistrarHallazgosOrdenProduccionController.cs" />
     <Compile Include="Controllers\TrabajarOrdenProduccionController.cs" />

@@ -1,14 +1,10 @@
 ﻿using IS_TP1._2_Servidor.Datos;
 using IS_TP1._2_Servidor.Dominio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IS_TP1._2_Servidor.Aplicacion
 {
-    public class ControladorAutenticarUsuario
+	public class ControladorAutenticarUsuario
     {
         private Usuario usuario;
         private Repositorio repositorio;

@@ -188,7 +188,7 @@ namespace IS_TP1._2_Servidor.Datos
 
         private void GenerarUsuarios()
         {
-            usuarios.Add(new Usuario("administrativo", "contraseña", empleados[0]));
+            usuarios.Add(new Usuario("administrativo", "1234", empleados[0]));
             usuarios.Add(new Usuario("supervisorCalidad", "contraseña", empleados[1]));
             usuarios.Add(new Usuario("supervisorLinea", "contraseña", empleados[2]));
 

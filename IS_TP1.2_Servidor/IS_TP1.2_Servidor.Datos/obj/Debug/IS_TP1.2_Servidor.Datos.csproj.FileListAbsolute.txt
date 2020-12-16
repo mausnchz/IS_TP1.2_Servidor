@@ -7,3 +7,12 @@ C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Se
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\obj\Debug\IS_TP1.2_Servidor.Datos.csproj.CopyComplete
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\obj\Debug\IS_TP1.2_Servidor.Datos.dll
 C:\Users\mauri\Documents\Software-Development\.NET\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\obj\Debug\IS_TP1.2_Servidor.Datos.pdb
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\bin\Debug\IS_TP1.2_Servidor.Datos.dll
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\bin\Debug\IS_TP1.2_Servidor.Datos.pdb
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\bin\Debug\IS_TP1.2_Servidor.Dominio.dll
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\bin\Debug\IS_TP1.2_Servidor.Dominio.pdb
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\obj\Debug\IS_TP1.2_Servidor.Datos.csprojAssemblyReference.cache
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\obj\Debug\IS_TP1.2_Servidor.Datos.csproj.CoreCompileInputs.cache
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\obj\Debug\IS_TP1.2_Servidor.Datos.csproj.CopyComplete
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\obj\Debug\IS_TP1.2_Servidor.Datos.dll
+C:\Users\Agustin1\Source\Repos\IS_TP1.2_Servidor\IS_TP1.2_Servidor\IS_TP1.2_Servidor.Datos\obj\Debug\IS_TP1.2_Servidor.Datos.pdb
