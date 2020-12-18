@@ -1,5 +1,6 @@
 ﻿using IS_TP1._2_Servidor.Aplicacion;
 using IS_TP1._2_Servidor.Dominio;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,20 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 {
     public class TrabajarOrdenProduccionController : ApiController
     {
-        [Route("api/TrabajarOrdenProduccion/IncorporarseOrdenProduccion/{numeroOrdenProduccion}/{nombreUsuario}")]
+        [Route("api/TrabajarOrdenProduccion/IncorporarseOrdenProduccion/")]
         [HttpPost]
-        public OrdenProduccion IncorporarseOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
+        public OrdenProduccion IncorporarseOrdenProduccion([FromBody] JObject data)
         {
             ControladorTrabajarOrdenProduccion controladorTrabajarOrdenProduccion = new ControladorTrabajarOrdenProduccion();
-            return controladorTrabajarOrdenProduccion.IncorporarseOrdenProduccion(numeroOrdenProduccion, nombreUsuario);
+            return controladorTrabajarOrdenProduccion.IncorporarseOrdenProduccion(data["numeroOrdenProduccion"].ToString(), data["nombreUsuario"].ToString());
         }
 
-        [Route("api/TrabajarOrdenProduccion/AbandonarOrdenProduccion/{numeroOrdenProduccion}")]
+        [Route("api/TrabajarOrdenProduccion/AbandonarOrdenProduccion/")]
         [HttpPost]
-        public List<OrdenProduccion> AbandonarOrdenProduccion(string numeroOrdenProduccion)
+        public List<OrdenProduccion> AbandonarOrdenProduccion([FromBody] JObject data)
         {
             ControladorTrabajarOrdenProduccion controladorTrabajarOrdenProduccion = new ControladorTrabajarOrdenProduccion();
-            return controladorTrabajarOrdenProduccion.AbandonarOrdenProduccion(numeroOrdenProduccion);
+            return controladorTrabajarOrdenProduccion.AbandonarOrdenProduccion(data["numeroOrdenProduccion"].ToString());
         }
     }
 }
