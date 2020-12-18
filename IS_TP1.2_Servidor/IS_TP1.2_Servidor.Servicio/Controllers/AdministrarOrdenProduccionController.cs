@@ -1,5 +1,6 @@
 ﻿using IS_TP1._2_Servidor.Aplicacion;
 using IS_TP1._2_Servidor.Dominio;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,28 +12,28 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 {
     public class AdministrarOrdenProduccionController : ApiController
     {
-        [Route("api/AdministrarOrdenProduccion/RegistrarPausaOrdenProduccion/{numeroOrdenProduccion}")]
+        [Route("api/AdministrarOrdenProduccion/RegistrarPausaOrdenProduccion")]
         [HttpPost]
-        public List<OrdenProduccion> RegistrarPausaOrdenProduccion(string numeroOrdenProduccion)
+        public List<OrdenProduccion> RegistrarPausaOrdenProduccion([FromBody] JObject data)
         {
             ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
-            return controladorAdministrarOrdenProduccion.RegistrarPausaOrdenProduccion(numeroOrdenProduccion);
+            return controladorAdministrarOrdenProduccion.RegistrarPausaOrdenProduccion(data["numeroOrdenProduccion"].ToString());
         }
 
-        [Route("api/AdministrarOrdenProduccion/RegistrarReanudacionOrdenProduccion/{numeroOrdenProduccion}")]
+        [Route("api/AdministrarOrdenProduccion/RegistrarReanudacionOrdenProduccion")]
         [HttpPost]
-        public List<OrdenProduccion> RegistrarReanudacionOrdenProduccion(string numeroOrdenProduccion)
+        public List<OrdenProduccion> RegistrarReanudacionOrdenProduccion([FromBody] JObject data)
         {
             ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
-            return controladorAdministrarOrdenProduccion.RegistrarReanudacionOrdenProduccion(numeroOrdenProduccion);
+            return controladorAdministrarOrdenProduccion.RegistrarReanudacionOrdenProduccion(data["numeroOrdenProduccion"].ToString());
         }
 
-        [Route("api/AdministrarOrdenProduccion/RegistrarFinalizacionOrdenProduccion/{numeroOrdenProduccion}")]
+        [Route("api/AdministrarOrdenProduccion/RegistrarFinalizacionOrdenProduccion")]
         [HttpPost]
-        public List<OrdenProduccion> RegistrarFinalizacionOrdenProduccion(string numeroOrdenProduccion)
+        public List<OrdenProduccion> RegistrarFinalizacionOrdenProduccion([FromBody] JObject data)
         {
             ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
-            return controladorAdministrarOrdenProduccion.RegistrarFinalizacionOrdenProduccion(numeroOrdenProduccion);
+            return controladorAdministrarOrdenProduccion.RegistrarFinalizacionOrdenProduccion(data["numeroOrdenProduccion"].ToString());
         }
     }
 }

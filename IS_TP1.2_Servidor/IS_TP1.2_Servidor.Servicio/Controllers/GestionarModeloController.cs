@@ -45,12 +45,12 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 			return controladorGestionarModelo.ModificarModelo(data["SKU"].ToString(), data["Denominacion"].ToString(), int.Parse(data["Objetivo"].ToString()));
 		}
 
-		[Route("api/GestionarModelo/EliminarModelo")]
+		[Route("api/GestionarModelo/EliminarModelo/{Codigo}")]
 		[HttpDelete]
-		public List<Modelo> EliminarModel([FromBody] JObject data)
+		public List<Modelo> EliminarModel(string Codigo)
 		{
 			ControladorGestionarModelo controladorGestionarModelo = new ControladorGestionarModelo();
-			return controladorGestionarModelo.EliminarModelo(data["Codigo"].ToString());
+			return controladorGestionarModelo.EliminarModelo(Codigo);
 		}
 
 

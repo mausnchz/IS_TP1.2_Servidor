@@ -45,12 +45,12 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 			return controladorGestionarColor.ModificarColor(data["Codigo"].ToString(), data["Descripcion"].ToString());
 		}
 
-		[Route("api/GestionarColor/EliminarColor")]
+		[Route("api/GestionarColor/EliminarColor/{Codigo}")]
 		[HttpDelete]
-		public List<Color> EliminarColor([FromBody] JObject data)
+		public List<Color> EliminarColor(string Codigo)
 		{
 			ControladorGestionarColor controladorGestionarColor = new ControladorGestionarColor();
-			return controladorGestionarColor.EliminarColor(data["Codigo"].ToString());
+			return controladorGestionarColor.EliminarColor(Codigo);
 		}
 
 

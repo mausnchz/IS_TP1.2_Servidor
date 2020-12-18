@@ -13,10 +13,9 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 		public Usuario RegistrarPausaOrdenProduccion([FromBody] JObject data)
 		{
 			ControladorAutenticarUsuario controladorAutenticarUsuario = new ControladorAutenticarUsuario();
-			return controladorAutenticarUsuario.autenticarUsuario(data["nombre"].ToString(), data["contrasenia"].ToString());
+			return controladorAutenticarUsuario.autenticarUsuario(data["Nombre"].ToString(), data["Contraseña"].ToString());
 
 		}
-
 
 	}
 }
