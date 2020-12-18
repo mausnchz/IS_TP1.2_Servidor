@@ -20,6 +20,12 @@ namespace IS_TP1._2_Servidor.Aplicacion
         {
             repositorio = Repositorio.ObtenerInstancia();
         }
+
+        public List<OrdenProduccion> ObtenerOrdenesProduccion()
+		{
+            return repositorio.ObtenerOrdenesProduccion();
+		}
+
         public OrdenProduccion IncorporarseOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
         {
             horaActual = new DateTime();
