@@ -20,7 +20,6 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
             return controladorAdministrarOrdenProduccion.ObtenerOrdenesProduccion();
         }
 
-
         [Route("api/AdministrarOrdenProduccion/ObtenerOrdenProduccion/{numeroOrdenProduccion}")]
         [HttpGet]
         public OrdenProduccion ObtenerOrdenesProduccion(string numeroOrdenProduccion)
@@ -29,14 +28,12 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
             return controladorAdministrarOrdenProduccion.ObtenerOrdenProduccion(numeroOrdenProduccion);
         }
 
-
-
         [Route("api/AdministrarOrdenProduccion/RegistrarPausaOrdenProduccion")]
         [HttpPost]
         public List<OrdenProduccion> RegistrarPausaOrdenProduccion([FromBody] JObject data)
         {
             ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
-            return controladorAdministrarOrdenProduccion.RegistrarPausaOrdenProduccion(data["numeroOrdenProduccion"].ToString());
+            return controladorAdministrarOrdenProduccion.RegistrarPausaOrdenProduccion(data["NumeroOrdenProduccion"].ToString());
         }
 
         [Route("api/AdministrarOrdenProduccion/RegistrarReanudacionOrdenProduccion")]
@@ -44,7 +41,7 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
         public List<OrdenProduccion> RegistrarReanudacionOrdenProduccion([FromBody] JObject data)
         {
             ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
-            return controladorAdministrarOrdenProduccion.RegistrarReanudacionOrdenProduccion(data["numeroOrdenProduccion"].ToString());
+            return controladorAdministrarOrdenProduccion.RegistrarReanudacionOrdenProduccion(data["NumeroOrdenProduccion"].ToString());
         }
 
         [Route("api/AdministrarOrdenProduccion/RegistrarFinalizacionOrdenProduccion")]
@@ -52,7 +49,7 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
         public List<OrdenProduccion> RegistrarFinalizacionOrdenProduccion([FromBody] JObject data)
         {
             ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
-            return controladorAdministrarOrdenProduccion.RegistrarFinalizacionOrdenProduccion(data["numeroOrdenProduccion"].ToString());
+            return controladorAdministrarOrdenProduccion.RegistrarFinalizacionOrdenProduccion(data["NumeroOrdenProduccion"].ToString());
         }
     }
 }
