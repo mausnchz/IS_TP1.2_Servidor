@@ -12,9 +12,14 @@ namespace IS_TP1._2_Servidor.Aplicacion
     {
         private Repositorio repositorio;
 
-        public ControladorAdministrarOrdenProduccion()
+        public List<OrdenProduccion> ObtenerOrdenesProduccion()
         {
-            repositorio = Repositorio.ObtenerInstancia();
+            return repositorio.ObtenerOrdenesProduccion();
+        }
+
+        public OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion)
+        {
+            return repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
         }
 
         public List<OrdenProduccion> RegistrarPausaOrdenProduccion(string numeroOrdenProduccion)
@@ -34,7 +39,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
             return repositorio.ObtenerOrdenesProduccion();
         }
 
-        public List<OrdenProduccion> RegistrarReanudacionOrdenProduccion(string numeroOrdenProduccion)
+		public List<OrdenProduccion> RegistrarReanudacionOrdenProduccion(string numeroOrdenProduccion)
         {
             OrdenProduccion ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
             DateTime horaActual = DateTime.Now;

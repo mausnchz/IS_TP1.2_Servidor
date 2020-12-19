@@ -12,6 +12,25 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 {
     public class AdministrarOrdenProduccionController : ApiController
     {
+        [Route("api/AdministrarOrdenProduccion/ObtenerOrdenesProduccion")]
+        [HttpGet]
+        public List<OrdenProduccion> ObtenerOrdenesProduccion()
+        {
+            ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
+            return controladorAdministrarOrdenProduccion.ObtenerOrdenesProduccion();
+        }
+
+
+        [Route("api/AdministrarOrdenProduccion/ObtenerOrdenProduccion/{numeroOrdenProduccion}")]
+        [HttpGet]
+        public OrdenProduccion ObtenerOrdenesProduccion(string numeroOrdenProduccion)
+        {
+            ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
+            return controladorAdministrarOrdenProduccion.ObtenerOrdenProduccion(numeroOrdenProduccion);
+        }
+
+
+
         [Route("api/AdministrarOrdenProduccion/RegistrarPausaOrdenProduccion")]
         [HttpPost]
         public List<OrdenProduccion> RegistrarPausaOrdenProduccion([FromBody] JObject data)
