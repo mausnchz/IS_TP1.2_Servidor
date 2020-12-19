@@ -61,7 +61,7 @@ namespace IS_TP1._2_Servidor.Dominio
 
         public Boolean VerificarEstadoNoFinalizado()
         {
-            if(Estado!= EstadoOrdenProduccion.FINALZIADA)
+            if(Estado!= EstadoOrdenProduccion.FINALIZADA)
             {
                 return true;
             }
@@ -204,7 +204,7 @@ namespace IS_TP1._2_Servidor.Dominio
 
         public void FinalizarOrdenProduccion()
         {
-            Estado = EstadoOrdenProduccion.FINALZIADA;
+            Estado = EstadoOrdenProduccion.FINALIZADA;
         }
     }
 }

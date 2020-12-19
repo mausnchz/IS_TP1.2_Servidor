@@ -10,6 +10,6 @@ namespace IS_TP1._2_Servidor.Dominio
     {
         EN_CURSO,
         PAUSADA,
-        FINALZIADA
+        FINALIZADA
     }
 }
