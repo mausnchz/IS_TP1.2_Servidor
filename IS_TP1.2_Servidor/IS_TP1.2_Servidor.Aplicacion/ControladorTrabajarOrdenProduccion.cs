@@ -28,7 +28,8 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
         public OrdenProduccion IncorporarseOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
         {
-            horaActual = new DateTime();
+            horaActual = DateTime.Now;
+            horaActual.AddHours(20.0);
             ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
             tiposTurno = repositorio.ObtenerTiposTurno();
             usuario = repositorio.ObtenerUsuario(nombreUsuario);

@@ -174,7 +174,7 @@ namespace IS_TP1._2_Servidor.Datos
         private void GenerarTiposTurno()
         {
             tiposTurno.Add(new TipoTurno("Mañana", new DateTime(2020, 6, 15, 8, 0, 0), new DateTime(2020, 6, 15, 12, 0, 0)));
-            tiposTurno.Add(new TipoTurno("Tarde", new DateTime(2020, 6, 15, 14, 0, 0), new DateTime(2020, 6, 15, 18, 0, 0)));
+            tiposTurno.Add(new TipoTurno("Tarde", new DateTime(2020, 6, 15, 14, 0, 0), new DateTime(2020, 6, 15, 23, 59, 0)));
             tiposTurno.Add(new TipoTurno("Mañana", new DateTime(2020, 6, 15, 20, 0, 0), new DateTime(2020, 6, 15, 00, 0, 0)));
         }
 
@@ -255,7 +255,7 @@ namespace IS_TP1._2_Servidor.Datos
 
         private void GenerarOrdenesProduccion()
         {
-            ordenesProduccion.Add(new OrdenProduccion("0001", modelos[0], colores[0], EstadoOrdenProduccion.FINALZIADA,
+            ordenesProduccion.Add(new OrdenProduccion("0001", modelos[0], colores[0], EstadoOrdenProduccion.EN_CURSO,
                 empleados[2], turnos));
         }
     }

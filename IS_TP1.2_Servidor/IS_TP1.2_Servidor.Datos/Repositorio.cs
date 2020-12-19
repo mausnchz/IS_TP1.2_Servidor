@@ -60,11 +60,21 @@ namespace IS_TP1._2_Servidor.Datos
 
         public Usuario ObtenerUsuario(string nombreUsuario)
         {
-            return baseDatos.ObtenerUsuarios().Where(z => z.Nombre == nombreUsuario).FirstOrDefault();
+            var usuarios = baseDatos.ObtenerUsuarios();
+            foreach(Usuario u in usuarios)
+			{
+                if (u.Nombre == nombreUsuario) {
+                    return u;
+                };
+			}
+            return null;
         }
+
+
 
         public List<OrdenProduccion> ObtenerOrdenesProduccion()
         {
+
             return baseDatos.ObtenerOrdenesProduccion();
         }
 
