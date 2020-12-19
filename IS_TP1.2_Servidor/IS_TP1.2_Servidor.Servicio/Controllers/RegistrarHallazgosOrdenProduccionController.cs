@@ -1,5 +1,6 @@
 ﻿using IS_TP1._2_Servidor.Aplicacion;
 using IS_TP1._2_Servidor.Dominio;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,34 +12,33 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 {
     public class RegistrarHallazgosOrdenProduccionController : ApiController
     {
-        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarDefecto/{numeroOrdenProduccion}/{tipoDefecto}/" +
-            "{nombreDefecto}/{orientacion}/{cantidad}/{nombreUsuario}")]
+        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarDefecto/")]
         [HttpPost]
-        public OrdenProduccion GestionarDefecto(string numeroOrdenProduccion, string tipoDefecto, string nombreDefecto,
-            string orientacion, int cantidad, string nombreUsuario)
+        public OrdenProduccion GestionarDefecto([FromBody] JObject data)
         {
             ControladorRegistrarHallazgosOrdenProduccion controladorRegistrarHallazgosOrdenProduccion = new ControladorRegistrarHallazgosOrdenProduccion();
-            return controladorRegistrarHallazgosOrdenProduccion.GestionarDefecto(numeroOrdenProduccion, tipoDefecto, nombreDefecto,
-                orientacion, cantidad, nombreUsuario);
+            return controladorRegistrarHallazgosOrdenProduccion.GestionarDefecto(data["numeroOrdenProduccion"].ToString(),
+                data["tipoDefecto"].ToString(), data["nombreDefecto"].ToString(),
+                data["orientacion"].ToString(), int.Parse(data["cantidad"].ToString()), data["nombreUsuario"].ToString());
         }
 
-        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParPrimeraCalidad/{numeroOrdenProduccion}/" +
+        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParPrimeraCalidad/" +
             "{cantidad}/{nombreUsuario}")]
         [HttpPost]
-        public OrdenProduccion GestionarParPrimeraCalidad(string numeroOrdenProduccion, int cantidad, string nombreUsuario)
+        public OrdenProduccion GestionarParPrimeraCalidad([FromBody] JObject data)
         {
             ControladorRegistrarHallazgosOrdenProduccion controladorRegistrarHallazgosOrdenProduccion = new ControladorRegistrarHallazgosOrdenProduccion();
-            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(numeroOrdenProduccion, cantidad, nombreUsuario);
+            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(data["numeroOrdenProduccion"].ToString(), 
+                int.Parse(data["cantidad"].ToString()), data["nombreUsuario"].ToString());
         }
 
-        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParesHermanados/{numeroOrdenProduccion}/" +
-            "{cantidad}/{nombreUsuario}")]
+        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParesHermanados")]
         [HttpPost]
-        public OrdenProduccion GestionarParesHermanados(string numeroOrdenProduccion, int cantidad,
-            string nombreUsuario)
+        public OrdenProduccion GestionarParesHermanados([FromBody] JObject data)
         {
             ControladorRegistrarHallazgosOrdenProduccion controladorRegistrarHallazgosOrdenProduccion = new ControladorRegistrarHallazgosOrdenProduccion();
-            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(numeroOrdenProduccion, cantidad, nombreUsuario);
+            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(data["numeroOrdenProduccion"].ToString(),
+                int.Parse(data["cantidad"].ToString()), data["nombreUsuario"].ToString());
         }
     }
 }
