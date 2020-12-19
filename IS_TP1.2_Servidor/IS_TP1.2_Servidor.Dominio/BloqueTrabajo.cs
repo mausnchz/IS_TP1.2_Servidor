@@ -79,7 +79,10 @@ namespace IS_TP1._2_Servidor.Dominio
 
         public void QuitarParPrimeraCalidad()
         {
-            CantidadParesPrimeraCalidad--;
+            if(!(CantidadParesPrimeraCalidad == 0))
+            {
+                CantidadParesPrimeraCalidad--;
+            }
         }
 
     }

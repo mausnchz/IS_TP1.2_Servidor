@@ -12,6 +12,10 @@ namespace IS_TP1._2_Servidor.Aplicacion
     {
         private Repositorio repositorio;
 
+        public ControladorAdministrarOrdenProduccion()
+        {
+            repositorio = Repositorio.ObtenerInstancia();
+        }
         public List<OrdenProduccion> ObtenerOrdenesProduccion()
         {
             return repositorio.ObtenerOrdenesProduccion();

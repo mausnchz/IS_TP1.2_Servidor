@@ -73,7 +73,11 @@ namespace IS_TP1._2_Servidor.Aplicacion
         private Boolean VerificarExistenciaTipoTurno(DateTime horaActual)
         {
             foreach(TipoTurno tt in tiposTurno){
-                if(horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour <= tt.HoraFinalizacion.Hour && horaActual.Minute < tt.HoraFinalizacion.Minute)
+                if(horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour < tt.HoraFinalizacion.Hour)
+                {
+                    return true;
+                }
+                else if(horaActual.Hour == tt.HoraFinalizacion.Hour && horaActual.Minute < tt.HoraFinalizacion.Minute)
                 {
                     return true;
                 }
@@ -87,7 +91,11 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
             foreach (TipoTurno tt in tiposTurno)
             {
-                if (horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour <= tt.HoraFinalizacion.Hour && horaActual.Minute < tt.HoraFinalizacion.Minute)
+                if (horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour < tt.HoraFinalizacion.Hour)
+                {
+                    tipoTurno = tt;
+                }
+                else if(horaActual.Hour == tt.HoraFinalizacion.Hour && horaActual.Minute < tt.HoraFinalizacion.Minute)
                 {
                     tipoTurno = tt;
                 }

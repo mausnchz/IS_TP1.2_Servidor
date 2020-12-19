@@ -22,14 +22,13 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
                 data["Orientacion"].ToString(), int.Parse(data["Cantidad"].ToString()), data["NombreUsuario"].ToString());
         }
 
-        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParPrimeraCalidad/" +
-            "{cantidad}/{nombreUsuario}")]
+        [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParPrimeraCalidad/")]
         [HttpPost]
         public OrdenProduccion GestionarParPrimeraCalidad([FromBody] JObject data)
         {
             ControladorRegistrarHallazgosOrdenProduccion controladorRegistrarHallazgosOrdenProduccion = new ControladorRegistrarHallazgosOrdenProduccion();
-            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(data["numeroOrdenProduccion"].ToString(), 
-                int.Parse(data["cantidad"].ToString()), data["nombreUsuario"].ToString());
+            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(data["NumeroOrdenProduccion"].ToString(), 
+                int.Parse(data["Cantidad"].ToString()), data["NombreUsuario"].ToString());
         }
 
         [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParesHermanados")]
@@ -37,8 +36,8 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
         public OrdenProduccion GestionarParesHermanados([FromBody] JObject data)
         {
             ControladorRegistrarHallazgosOrdenProduccion controladorRegistrarHallazgosOrdenProduccion = new ControladorRegistrarHallazgosOrdenProduccion();
-            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(data["numeroOrdenProduccion"].ToString(),
-                int.Parse(data["cantidad"].ToString()), data["nombreUsuario"].ToString());
+            return controladorRegistrarHallazgosOrdenProduccion.GestionarParPrimeraCalidad(data["NumeroOrdenProduccion"].ToString(),
+                int.Parse(data["Cantidad"].ToString()), data["NombreUsuario"].ToString());
         }
     }
 }
