@@ -28,6 +28,12 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
             return controladorTrabajarOrdenProduccion.AbandonarOrdenProduccion(data["numeroOrdenProduccion"].ToString());
         }
 
-        
+        [Route("api/TrabajarOrdenProduccion/ObtenerOrdenesProduccion")]
+        [HttpGet]
+        public List<OrdenProduccion> RegistrarPausaOrdenProduccion()
+        {
+            ControladorTrabajarOrdenProduccion controladorTrabajarOrdenProduccion = new ControladorTrabajarOrdenProduccion();
+            return controladorTrabajarOrdenProduccion.ObtenerOrdenesProduccion();
+        }
     }
 }

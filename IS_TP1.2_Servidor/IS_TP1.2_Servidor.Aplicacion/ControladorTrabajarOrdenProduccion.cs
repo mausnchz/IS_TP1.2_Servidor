@@ -126,5 +126,10 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
             return ordenProduccion;
         }
+
+        public List<OrdenProduccion> ObtenerOrdenesProduccion()
+        {
+            return repositorio.ObtenerOrdenesProduccion();
+        }
     }
 }
