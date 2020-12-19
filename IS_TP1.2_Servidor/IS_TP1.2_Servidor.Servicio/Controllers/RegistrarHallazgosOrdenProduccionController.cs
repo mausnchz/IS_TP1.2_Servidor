@@ -17,9 +17,9 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
         public OrdenProduccion GestionarDefecto([FromBody] JObject data)
         {
             ControladorRegistrarHallazgosOrdenProduccion controladorRegistrarHallazgosOrdenProduccion = new ControladorRegistrarHallazgosOrdenProduccion();
-            return controladorRegistrarHallazgosOrdenProduccion.GestionarDefecto(data["numeroOrdenProduccion"].ToString(),
-                data["tipoDefecto"].ToString(), data["nombreDefecto"].ToString(),
-                data["orientacion"].ToString(), int.Parse(data["cantidad"].ToString()), data["nombreUsuario"].ToString());
+            return controladorRegistrarHallazgosOrdenProduccion.GestionarDefecto(data["NumeroOrdenProduccion"].ToString(),
+                data["TipoDefecto"].ToString(), data["NombreDefecto"].ToString(),
+                data["Orientacion"].ToString(), int.Parse(data["Cantidad"].ToString()), data["NombreUsuario"].ToString());
         }
 
         [Route("api/RegistrarHallazgosOrdenProduccion/GestionarParPrimeraCalidad/" +

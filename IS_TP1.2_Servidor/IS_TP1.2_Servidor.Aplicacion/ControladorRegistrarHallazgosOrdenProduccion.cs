@@ -31,7 +31,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
                 {
                     horaActualCorrespondeTipoTurnoHolgado = true;
                 }
-                else if (horaActual.Hour == tt.HoraFinalizacion.Hour && horaActual.Minute < 30)
+                else if (horaActual.Hour == tt.HoraFinalizacion.Hour && horaActual.Minute < tt.HoraFinalizacion.Minute+30)
                 {
                     horaActualCorrespondeTipoTurnoHolgado = true;
                 }

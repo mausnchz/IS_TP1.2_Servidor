@@ -29,7 +29,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
         public OrdenProduccion IncorporarseOrdenProduccion(string numeroOrdenProduccion, string nombreUsuario)
         {
             horaActual = DateTime.Now;
-            horaActual.AddHours(20.0);
+            //horaActual.AddHours(20.0);
             ordenProduccion = repositorio.ObtenerOrdenProduccion(numeroOrdenProduccion);
             tiposTurno = repositorio.ObtenerTiposTurno();
             usuario = repositorio.ObtenerUsuario(nombreUsuario);
@@ -78,7 +78,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
         private Boolean VerificarExistenciaTipoTurno(DateTime horaActual)
         {
             foreach(TipoTurno tt in tiposTurno){
-                if(horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour < tt.HoraFinalizacion.Hour)
+                if(horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour <= tt.HoraFinalizacion.Hour && horaActual.Minute < tt.HoraFinalizacion.Minute)
                 {
                     return true;
                 }
@@ -92,7 +92,7 @@ namespace IS_TP1._2_Servidor.Aplicacion
 
             foreach (TipoTurno tt in tiposTurno)
             {
-                if (horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour < tt.HoraFinalizacion.Hour)
+                if (horaActual.Hour >= tt.HoraInicio.Hour && horaActual.Hour <= tt.HoraFinalizacion.Hour && horaActual.Minute < tt.HoraFinalizacion.Minute)
                 {
                     tipoTurno = tt;
                 }
