@@ -12,6 +12,35 @@ namespace IS_TP1._2_Servidor.Servicio.Controllers
 {
     public class AdministrarOrdenProduccionController : ApiController
     {
+
+        [Route("api/AdministrarOrdenProduccion/IniciarOrdenProduccion")]
+        [HttpPost]
+        public List<OrdenProduccion> IniciarOrdenProduccion([FromBody] JObject data)
+        {
+            var turnos = new List<Turno>();
+            ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
+            return controladorAdministrarOrdenProduccion.IniciarOrdenProduccion(data["numeroOP"].ToString(),int.Parse(data["indexModelo"].ToString()),
+                int.Parse(data["indexColor"].ToString()), int.Parse(data["indexEmpleado"].ToString()),turnos
+            );
+        }
+
+        [Route("api/AdministrarOrdenProduccion/ObtenerLineas")]
+        [HttpGet]
+        public List<LineaTrabajo> ObtenerLineas()
+        {
+            ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
+            return controladorAdministrarOrdenProduccion.ObtenerLineas();
+        }
+
+        [Route("api/AdministrarOrdenProduccion/ObtenerTiposTurnos")]
+        [HttpGet]
+        public List<TipoTurno> ObtenerTiposTurnos()
+        {
+            ControladorAdministrarOrdenProduccion controladorAdministrarOrdenProduccion = new ControladorAdministrarOrdenProduccion();
+            return controladorAdministrarOrdenProduccion.ObtenerTiposTurnos();
+        }
+
+
         [Route("api/AdministrarOrdenProduccion/ObtenerOrdenesProduccion")]
         [HttpGet]
         public List<OrdenProduccion> ObtenerOrdenesProduccion()

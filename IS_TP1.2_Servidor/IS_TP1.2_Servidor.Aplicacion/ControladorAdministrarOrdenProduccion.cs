@@ -16,9 +16,29 @@ namespace IS_TP1._2_Servidor.Aplicacion
         {
             repositorio = Repositorio.ObtenerInstancia();
         }
+
+        public List<OrdenProduccion> IniciarOrdenProduccion(string numeroOP, int indexModelo, int indexColor, int indexEmpleado,
+            List<Turno> turnos)
+		{
+            return repositorio.IniciarOrdenProduccion( numeroOP,  indexModelo,  indexColor,  indexEmpleado,
+             turnos);
+
+        }
+
+        public List<TipoTurno> ObtenerTiposTurnos()
+        {
+            return repositorio.ObtenerTiposTurno();
+
+        }
+
         public List<OrdenProduccion> ObtenerOrdenesProduccion()
         {
             return repositorio.ObtenerOrdenesProduccion();
+        }
+
+        public List<LineaTrabajo> ObtenerLineas()
+        {
+            return repositorio.ObtenerLineas();
         }
 
         public OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion)

@@ -48,6 +48,11 @@ namespace IS_TP1._2_Servidor.Datos
             return baseDatos.ObtenerColores();
         }
 
+        public List<LineaTrabajo> ObtenerLineas()
+        {
+            return baseDatos.ObtenerLineasTrabajo();
+        }
+
         public OrdenProduccion ObtenerOrdenProduccion(string numeroOrdenProduccion)
         {
             return baseDatos.ObtenerOrdenesProduccion().Where(z => z.Numero == numeroOrdenProduccion).FirstOrDefault();
@@ -88,5 +93,17 @@ namespace IS_TP1._2_Servidor.Datos
             return baseDatos.ObtenerDefectos().FirstOrDefault(z => z.Tipo.Descripcion == tipoDefecto
                 && z.Descripcion == nombreDefecto);
         }
+
+        public List<TipoTurno> ObtenerTiposTurnos()
+		{
+            return baseDatos.ObtenerTiposTurno();
+        }
+
+        public List<OrdenProduccion> IniciarOrdenProduccion(string numeroOP, int indexModelo, int indexColor, int indexEmpleado,
+            List<Turno> turnos)
+		{
+            return baseDatos.IniciarOrdenProduccion(numeroOP, indexModelo,  indexColor,  indexEmpleado,
+           turnos);
+		}
     }
 }

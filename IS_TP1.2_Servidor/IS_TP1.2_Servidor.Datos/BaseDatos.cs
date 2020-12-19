@@ -193,9 +193,9 @@ namespace IS_TP1._2_Servidor.Datos
 
         private void GenerarEmpleados()
         {
-            empleados.Add(new Empleado("Apellido", "Nombre", "40345498", "email@email.com", cargos[0]));
-            empleados.Add(new Empleado("Apellido", "Nombre", "40345497", "email@email.com", cargos[1]));
-            empleados.Add(new Empleado("Apellido", "Nombre", "40345496", "email@email.com", cargos[2]));
+            empleados.Add(new Empleado("Lencina", "Agustin", "40345498", "email@email.com", cargos[0]));
+            empleados.Add(new Empleado("Mauricio", "Sanchez", "40345497", "email@email.com", cargos[1]));
+            empleados.Add(new Empleado("Pedro", "Perez", "40345496", "email@email.com", cargos[2]));
         }
 
         private void GenerarUsuarios()
@@ -251,6 +251,14 @@ namespace IS_TP1._2_Servidor.Datos
             turnos.Add(new Turno(new DateTime(2020, 12, 10), tiposTurno[0], 12, 10, bloquesTrabajo));
             turnos.Add(new Turno(new DateTime(2020, 12, 11), tiposTurno[0], 11, 8, bloquesTrabajo));
             turnos.Add(new Turno(new DateTime(2020, 12, 12), tiposTurno[0], 16, 11, bloquesTrabajo));
+        }
+
+        public List<OrdenProduccion> IniciarOrdenProduccion(string numeroOP, int indexModelo, int indexColor, int indexEmpleado,
+            List<Turno> turnos)
+		{
+            ordenesProduccion.Add(new OrdenProduccion(numeroOP, modelos[indexModelo], colores[indexColor], EstadoOrdenProduccion.EN_CURSO,
+                empleados[indexEmpleado], turnos));
+            return ordenesProduccion;
         }
 
         private void GenerarOrdenesProduccion()
