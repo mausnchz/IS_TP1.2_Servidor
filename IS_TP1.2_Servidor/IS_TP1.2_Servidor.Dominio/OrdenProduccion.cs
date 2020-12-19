@@ -167,6 +167,24 @@ namespace IS_TP1._2_Servidor.Dominio
                         int cantidadParesHermanadosSegundaCalidad)
         {
             Turno ultimoTurno = Turnos.Last();
+            if(cantidadParesHermanadosSegundaCalidad == -1)
+            {
+                if(ultimoTurno.CantidadParesHermanadosSegundaCalidad == 0)
+                {
+                    return;
+                }
+            }
+
+            else if(cantidadParesHermanadosPrimeraCalidad == -1)
+            {
+                if(ultimoTurno.CantidadParesHermanadosPrimeraCalidad == 0)
+                {
+                    return;
+                }
+            }
+
+            ultimoTurno.CantidadParesHermanadosPrimeraCalidad += cantidadParesHermanadosPrimeraCalidad;
+            ultimoTurno.CantidadParesHermanadosSegundaCalidad += cantidadParesHermanadosSegundaCalidad;
         }
 
         public void LiberarSupervisorCalidad()
